@@ -23,3 +23,19 @@ This is a web application developed using React that allows users to search for 
 4. Run the application: `npm start`
 
 **Screenshots:**
+
+**General Pokemon list view**
+![image](https://github.com/user-attachments/assets/40d84449-dc08-49fe-ae9d-b2183845a9bc)
+
+
+**Selected or searched Pokemon**
+
+![image](https://github.com/user-attachments/assets/dc7018dd-4069-449c-92ff-09f315661a67)
+
+
+
+
+
+
+
+
