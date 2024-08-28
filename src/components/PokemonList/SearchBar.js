@@ -1,5 +1,6 @@
 import React from 'react'
 import {placeHolderPhrase} from '../../utils/placeholderPhrase';
+import pokemonButton from  '../../assets/icon-pokemon.png'
 
 
 export default function SearchBar(props) {
@@ -20,7 +21,7 @@ const {formHandler} = props;
         value={searchInput}
         />
       <button onClick={onResetForm}>
-      Search
+        <img src={pokemonButton}/>
       </button>        
      </section>
     </>
