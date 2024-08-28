@@ -10,6 +10,9 @@ This is a web application developed using React that allows users to search for 
 - **Error Handling:** Basic error handling for cases where the API fails or returns no data.
 
 **Technologies Used:**
+- **HTML**
+- **CSS**
+- **JavaScript**
 - **React:** Framework for building the user interface.
 - **PokeAPI:** API for fetching Pokémon data.
 
