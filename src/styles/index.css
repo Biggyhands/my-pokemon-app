@@ -1,0 +1,114 @@
+/*--reset style--*/
+*{
+  margin: 0 ;
+  padding: 0 ;
+  box-sizing: border-box;   
+  font-family: 'Lilita One';
+}
+
+
+
+/*--Header Style--*/
+
+header{
+  height:  150px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.searchBar-Container{
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.searchBar-Container button{
+  border-radius: 10px;
+  height: 30px;
+  width: 50px;
+  
+
+}
+
+.searchBar-Container button:hover {
+  background-color: white;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.searchBar-Container input{
+  width: 250px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/*--Main Style--*/
+main{
+  height: 600px;
+  width:100%;
+}
+
+.card-List-Container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 10px; 
+}
+
+.card-Item{
+  border-radius: 10px;
+  background-color: white;
+  width:150px;
+  height: 150px;
+  margin:  20px;
+  text-align: center;
+  align-content: space-around;
+  border: 2px solid gray;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+
+}
+
+.card-Item:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+  cursor:pointer;
+}
+
+.card-Item p{
+  position: relative;
+  bottom: -20px;
+  font-size:20px;
+  
+
+}
+
+.card-Item img{
+  width:70px;
+  height: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
