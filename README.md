@@ -13,8 +13,10 @@ This is a web application developed using React that allows users to search for 
 - **HTML**
 - **CSS**
 - **JavaScript**
-- **React:** Framework for building the user interface.
 - **PokeAPI:** API for fetching Pokémon data.
+- **React:** Framework for building the user interface.
+- - **Jest  & React Testing Library**
+
 
 **Instructions to Run the Project:**
 1. Clone the repository: `git clone <repository-URL>`
