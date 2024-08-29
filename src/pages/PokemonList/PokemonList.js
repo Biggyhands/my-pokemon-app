@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from '../../components/PokemonList/SearchBar';
 import List from '../../components/PokemonList/List';
-import PokemonDetail from '../../pages/PokemonDetail/PokemonDetail' 
+import PokemonDetail from '../../pages/PokemonDetail/PokemonDetail';
 import { useForm } from '../../hooks/useForm';
 
 export default function PokemonList() {
     const [pokemonList, setPokemonList] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [selectedPokemon, setSelectedPokemon] = useState(null); // Estado para el Pokémon seleccionado
+    const [selectedPokemon, setSelectedPokemon] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null); 
 
     const formHandler = useForm({ searchInput: '' });
     const { formState } = formHandler;
@@ -35,11 +36,33 @@ export default function PokemonList() {
                 id: extractPokemonId(pokemon.url)
             }));
             setPokemonList(processedData); 
+            setErrorMessage(null); 
         } catch (error) {
             console.error('Error fetching Pokémon:', error);
             setPokemonList([]);
+            setErrorMessage('No Pokémon found :C');
         }
     };
+
+    async function getPokemonByPartialMatch(partialName) {
+        try {
+          const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=-1`);
+      
+          if (!response.ok) {
+            throw new Error(`Error fetching Pokémon: ${response.status}`);
+          }
+      
+          const data = await response.json();
+      
+          const pokemonList = data.results.filter(pokemon => pokemon.name.toLowerCase().startsWith(partialName.toLowerCase()));
+      
+          return pokemonList;
+        } catch (error) {
+          console.error(error);
+          return [];
+        }
+      }
+
 
     const fetchPokemonDetail = async (pokemonId) => {
         const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
@@ -52,9 +75,11 @@ export default function PokemonList() {
       
             const data = await response.json(); 
             setSelectedPokemon(data);
+            setErrorMessage(null); 
         } catch (error) {
             console.error('Error fetching Pokémon:', error);
             setSelectedPokemon(null);
+            setErrorMessage('No Pokémon found');
         }
     };
 
@@ -82,7 +107,7 @@ export default function PokemonList() {
         setCurrentPage(prevPage => {
             const newPage = prevPage - 1;
             if (newPage >= 1) {
-                fetchPokemonList(newPage); // Asegúrate de llamar a fetchPokemonList con el nuevo número de página
+                fetchPokemonList(newPage); 
                 return newPage;
             }
             return prevPage;
@@ -95,6 +120,7 @@ export default function PokemonList() {
 
     const handleBackToList = () => {
         setSelectedPokemon(null);
+        setErrorMessage(null); 
     };
 
     return (
@@ -105,9 +131,9 @@ export default function PokemonList() {
             </header>
 
             <main>
-                {selectedPokemon ? (
+                {selectedPokemon || errorMessage ? (
                     <div className='pokemon-detail-container'>
-                        <PokemonDetail pokemon={selectedPokemon} />
+                        <PokemonDetail pokemon={selectedPokemon} errorMessage={errorMessage} />
                         <button onClick={handleBackToList}>Back to List</button>
                     </div>
                 ) : (
@@ -115,7 +141,7 @@ export default function PokemonList() {
                 )}
             </main>
 
-            {!selectedPokemon && ( // Condicional para mostrar el footer solo si no hay un Pokémon seleccionado
+            {!selectedPokemon && !errorMessage && ( 
                 <footer>
                     <div className="pagination">
                         <button className="pagination-button" onClick={handlePreviousPage} disabled={currentPage === 1}>

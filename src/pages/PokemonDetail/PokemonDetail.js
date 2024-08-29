@@ -1,16 +1,25 @@
 import React from 'react';
 
 export default function PokemonDetail(props) {
-    const { pokemon } = props;
+    const { pokemon, errorMessage } = props;
+    
+    if (errorMessage) {
+        return (
+            <div className='pokemon-detail'>
+                <h2>MissingNO.</h2>
+                <p>{errorMessage}</p>
+                <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' alt='No Pokémon' />
+            </div>
+        );
+    }
+    
+    if (!pokemon) return null;
+
     const { name, id, abilities, types } = pokemon;
     
-    // Define the default image URL
     const defaultImageUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png';
-    
-    // Define the image URL based on the Pokémon ID
     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
-    // Handle the case where the image is not available
     const handleImageError = (e) => {
         e.target.src = defaultImageUrl; 
     };
