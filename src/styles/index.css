@@ -1,27 +1,23 @@
 /*--reset style--*/
-*{
-  margin: 0 ;
-  padding: 0 ;
-  box-sizing: border-box;   
-  font-family: 'Lilita One';
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lilita One";
 }
-
-
 
 /*--Header Style--*/
 
-body{
+body {
   max-width: 1440px;
   max-height: 731px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-
 }
 
-header{
-  height:  150px;
+header {
+  height: 150px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -30,7 +26,7 @@ header{
   align-items: center;
 }
 
-.searchBar-Container{
+.searchBar-Container {
   width: 100%;
   height: 50px;
   background-color: white;
@@ -38,7 +34,7 @@ header{
   justify-content: center;
 }
 
-.searchBar-Container button{
+.searchBar-Container button {
   border-radius: 10px;
   height: 30px;
   width: 50px;
@@ -48,7 +44,7 @@ header{
   background-color: white;
 }
 
-.searchBar-Container button img{
+.searchBar-Container button img {
   height: 40px;
   width: 40px;
   position: relative;
@@ -61,7 +57,7 @@ header{
   cursor: pointer;
 }
 
-.searchBar-Container input{
+.searchBar-Container input {
   width: 250px;
   height: 30px;
   margin-right: 5px;
@@ -70,102 +66,114 @@ header{
 }
 
 /*--Main Style--*/
-main{
+main {
   height: 80%;
-  width:100%;
+  width: 100%;
 }
 
-.card-List-Container{
+.card-List-Container {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; 
-  gap: 20px; 
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.card-Item{
+.card-Item {
   border-radius: 10px;
   background-color: white;
-  width:150px;
+  width: 150px;
   height: 170px;
-  margin:  20px;
+  margin: 20px;
   text-align: center;
   align-content: space-around;
   border: 2px solid black;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  background-image: url('../assets/icono-pokemon-background.png');
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-image: url("../assets/icono-pokemon-background.png");
   background-size: cover;
-  background-repeat: no-repeat; 
-  background-position:center ;  
-  
-
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card-Item:hover {
-  transform: translateY(-10px); 
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); 
-  cursor:pointer;
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
-.card-Item p{
+.card-Item p {
   text-transform: capitalize;
-  font-size:15px;
-  position:relative;
+  font-size: 15px;
+  position: relative;
   bottom: -5px;
   color: black;
   text-decoration: none;
-  
 }
 
-.card-Item span{
+.card-Item span {
   font-size: 12px;
   color: black;
   text-decoration: none;
 }
 
-.card-Item img{
-  width:100px;
+.card-Item img {
+  width: 100px;
   height: 100px;
   position: relative;
   top: 10px;
   left: 5px;
 }
 
-
-.pokemon-detail-container{
-  
+.pokemon-detail-container {
   display: flex;
   flex-direction: column;
-  align-items:center ;
+  align-items: center;
 }
 
-.pokemon-detail-container button{
-margin-top: 20px;
-border-radius: 10px;
-width:100px;
+.pokemon-detail-container button {
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 100px;
 }
 
-.pokemon-detail-container button{
+.pokemon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 20px;
+
+}
+
+.pokemon-button:hover {
   cursor: pointer;
 }
 
-
-.pokemon-detail-container button:active{
-
+.pokemon-button:active {
   background-color: gray;
 }
 
+.pokemon-detail-container button {
+  cursor: pointer;
+}
 
+.pokemon-detail-container button:active {
+  background-color: gray;
+}
 
-.pokemon-detail{
+.pokemon-detail {
   width: 330px;
   height: 400px;
-    background-image: url('../assets/pokemon-detail.jpg');
+  background-image: url("../assets/pokemon-detail.jpg");
   background-size: cover;
-  background-repeat: no-repeat; 
-  background-position: -450px center ;  
+  background-repeat: no-repeat;
+  background-position: -450px center;
   border: 1.5px solid black;
   border-radius: 10px;
   display: flex;
@@ -175,60 +183,49 @@ width:100px;
   text-transform: capitalize;
 }
 
-.pokemon-detail h2{
+.pokemon-detail h2 {
   margin-top: 20px;
   font-size: 18px;
 }
 
-.pokemon-detail ul{
+.pokemon-detail ul {
   margin-bottom: 8px;
-  margin-left:28px;
-
-
+  margin-left: 28px;
 }
 
-.pokemon-detail ul li{
+.pokemon-detail ul li {
   list-style-type: none;
-  color:rgba(0, 0, 0, 0.767);
+  color: rgba(0, 0, 0, 0.767);
 }
 
-.selected-li{
+.selected-li {
   position: relative;
-  left:-20px;
+  left: -20px;
 }
 
-
-.pokemon-detail img{
-  width:150px;
+.pokemon-detail img {
+  width: 150px;
   height: 150px;
   transition: transform 0.3s ease-in;
-
 }
 
-.pokemon-detail img:hover{
+.pokemon-detail img:hover {
   cursor: pointer;
   transform: rotateY(180deg);
-
 }
-
-
-
 
 /*--Footer Style--*/
 
-
-footer{
-
-height:25px;
-
+footer {
+  height: 25px;
 }
 
-.pagination{
+.pagination {
   display: flex;
   justify-content: center;
 }
 
-.pagination-button{
+.pagination-button {
   margin-right: 20px;
   border-radius: 10px;
   border: 1px solid black;
@@ -236,25 +233,10 @@ height:25px;
   width: 60px;
 }
 
-.pagination-button:hover{
+.pagination-button:hover {
   cursor: pointer;
 }
 
-.pagination-button:active{
+.pagination-button:active {
   background-color: gray;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
