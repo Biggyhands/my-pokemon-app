@@ -40,7 +40,7 @@ The assets used in this project and the concept of Pokémon are **NOT** my origi
 ![image](https://github.com/user-attachments/assets/59b08552-faa0-41c5-b1b1-588b13ab5d9e)
 
 
-**Error Pokemon not found or API not working **
+**Error Pokemon not found or API not working**
 
 ![image](https://github.com/user-attachments/assets/4a2171e3-4f09-4159-9264-24b85abf2ecb)
 
