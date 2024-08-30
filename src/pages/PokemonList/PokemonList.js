@@ -39,11 +39,11 @@ export default function PokemonList() {
       setPokemonList(processedData);
     } catch (error) {
       console.error("Error fetching Pokémon:", error);
-      setPokemonList([]);
+      navigate("/error");
     }
   };
 
-  async function getPokemonByPartialMatch(partialName) {
+  const getPokemonByPartialMatch = async (partialName) => {
     const apiUrl = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=-1`;
 
     try {
@@ -53,7 +53,6 @@ export default function PokemonList() {
       }
 
       const data = await response.json();
-      console.log(data);
       const pokemonList = data.results.filter((pokemon) =>
         pokemon.name.toLowerCase().startsWith(partialName.toLowerCase())
       );
@@ -68,9 +67,9 @@ export default function PokemonList() {
       setPokemonList(processedData);
     } catch (error) {
       console.error("Error fetching Pokémon:", error);
-      setPokemonList([]);
+      navigate("/error");
     }
-  }
+  };
 
   useEffect(() => {
     if (searchInput.trim().length === 0) {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchPokemonDetail } from "../../utils/commons";
 import { useNavigate, useParams } from "react-router-dom";
 
-function NoPokemonFound() {
+const NoPokemonFound = () => {
   return (
     <div className="pokemon-detail">
       <h2>MissingNO.</h2>
@@ -13,18 +13,18 @@ function NoPokemonFound() {
       />
     </div>
   );
-}
+};
 
 export default function PokemonDetail() {
   const params = useParams();
-  const { id: pokemonId } = params;
+  const { id } = params;
 
   const [pokemon, setPokemon] = useState();
 
   const navigate = useNavigate();
 
   const getPokemon = async () => {
-    const data = await fetchPokemonDetail(pokemonId);
+    const data = await fetchPokemonDetail(id);
     setPokemon(data);
   };
 
@@ -34,7 +34,7 @@ export default function PokemonDetail() {
 
   const defaultImageUrl =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png";
-  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   const handleImageError = (e) => {
     e.target.src = defaultImageUrl;
@@ -45,8 +45,8 @@ export default function PokemonDetail() {
   };
 
   return (
-    <div>
-      <h2>hola</h2>
+    <div className="pokemon-detail-container">
+      <h1>Pokemon Detail</h1>
       <div className="pokemon-detail">
         {pokemon === null && <NoPokemonFound />}
         {pokemon && (
