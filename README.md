@@ -29,6 +29,13 @@ The assets used in this project and the concept of Pokémon are **NOT** my origi
 3. Install dependencies: `npm install`
 4. Run the application: `npm start`
 
+**Demo**
+
+
+https://github.com/user-attachments/assets/be229f25-1e84-4d44-acee-8b0916121a11
+
+
+
 **Screenshots:**
 
 **General Pokemon list view**
