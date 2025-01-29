@@ -31,6 +31,7 @@ The assets used in this project and the concept of Pokémon are **NOT** my origi
 
 **Demo**
 
+Deploy: https://luxury-bonbon-9b9979.netlify.app/pokemon/84
 
 https://github.com/user-attachments/assets/be229f25-1e84-4d44-acee-8b0916121a11
 
