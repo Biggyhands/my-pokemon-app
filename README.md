@@ -12,7 +12,7 @@ The assets used in this project and the concept of Pokémon are **NOT** my origi
 - **Search:** Allows users to search for Pokémon by name in real-time.
 - **Pagination:** Navigate between different pages of the Pokémon list.
 - **Pokémon Details:** Shows detailed information about each Pokémon, including name, image, abilities, and types.
-- **Styling:** Responsive design with basic styling applied using CSS
+- **Styling:** Responsive design with basic styling applied using CSS.
 - **Error Handling:** Basic error handling for cases where the API fails or returns no data.
 
 **Technologies Used:**
